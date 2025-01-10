@@ -8,9 +8,16 @@ This project demonstrates how to use the `ManagedConfigurationPerOrigin` policy 
 ### Overview
 The Managed Configuration API enables web apps to access externally managed configurations. This example shows how to serve and access a configuration file using the `navigator.managed.getManagedConfiguration()` JavaScript call.
 
-For detailed information about the policy, refer to the official documentation [here](https://chromeenterprise.google/policies/?policy=ManagedConfigurationPerOrigin).
+For detailed information about the policy, refer to the [official documentation](https://chromeenterprise.google/policies/?policy=ManagedConfigurationPerOrigin).
 
 ---
+
+### Development Status
+
+The Managed Configuration API is shipped and available in Chromium Desktop starting from version 91 onward. This means that any Chromium-based browser version 91 or higher can utilize the API for managed configuration functionality. For more information, visit the [Chromium Feature Status page](https://chromestatus.com/feature/5755104466567168).
+
+***Important:***
+The Managed Configuration API can only be used for force-installed web applications. This requires the web app to be explicitly defined in the WebAppInstallForceList policy. Therefore, the app must be installed as a Web App.
 
 ### Steps to Run the Demo
 
@@ -39,7 +46,7 @@ Create a JSON policy configuration file with the following settings:
     {
       "origin": "http://127.0.0.1:8475/",
       "managed_configuration_url": "http://127.0.0.1:8475/sample.json",
-      "managed_configuration_hash": "ac61833450a10510a95e27305571cc6d9d085b32"
+      "managed_configuration_hash": "ac7c5f03df041f89640a3e64e5d807aa5d654bc0"
     }
   ]
 }

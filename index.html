@@ -6,8 +6,12 @@
 </head>
 
 <body>
+  <h1>Managed Config API</h1>
+  <p>Active: <span id="flag">false</span></p>
   <script type="text/javascript">
-    navigator.managed.getManagedConfiguration(["interactable"]).then(console.log);
+    navigator?.managed?.getManagedConfiguration(["active"]).then((data) => {
+      document.getElementById("flag").textContent = data.active;
+    });
   </script>
 </body>
 
