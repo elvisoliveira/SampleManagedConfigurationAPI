@@ -21,31 +21,22 @@ The Managed Configuration API can only be used for force-installed web applicati
 
 ### Steps to Run the Demo
 
-#### 1. Start the Local HTTP Server
-To serve the repository contents to Chromium, I'm using the PHP's built-in HTTP server:
-
-```bash
-php -S 0.0.0.0:8475
-```
-
-This command starts a local server to host the web app. Ensure PHP is installed. If not, follow relevant installation instructions for your OS.
-
-#### 2. Create and Add the Policy Configuration
+#### 1. Create and Add the Policy Configuration
 Create a JSON policy configuration file with the following settings:
 
 ```json
 {
   "WebAppInstallForceList": [
     {
-      "url": "http://127.0.0.1:8475/",
+      "url": "https://elvisoliveira.github.io/SampleManagedConfigurationAPI/",
       "create_desktop_shortcut": true,
       "default_launch_container": "tab"
     }
   ],
   "ManagedConfigurationPerOrigin": [
     {
-      "origin": "http://127.0.0.1:8475/",
-      "managed_configuration_url": "http://127.0.0.1:8475/sample.json",
+      "origin": "https://elvisoliveira.github.io/SampleManagedConfigurationAPI/",
+      "managed_configuration_url": "https://elvisoliveira.github.io/SampleManagedConfigurationAPI/sample.json",
       "managed_configuration_hash": "ac7c5f03df041f89640a3e64e5d807aa5d654bc0"
     }
   ]
@@ -61,7 +52,7 @@ Create a JSON policy configuration file with the following settings:
 
 Chromium stores the hash along with the fetched contents and will only request a new configuration file if the hash changes.
 
-#### 3. Apply the Policy
+#### 2. Apply the Policy
 Save the JSON configuration in the appropriate directory for your operating system (paths may vary):
 - **Windows**: `C:\Windows\PolicyDefinitions`
 - **Linux**: `/etc/chromium/policies/managed/`
