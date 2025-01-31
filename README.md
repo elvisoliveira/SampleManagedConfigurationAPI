@@ -69,3 +69,7 @@ The `sample.json` file in the repository contains the managed configuration data
 If hosting externally, update the `managed_configuration_url` in the policy to the file's external URL.
 
 For more details about the Managed Configuration API, refer to the documentation [here](https://wicg.github.io/WebApiDevice/managed_config/) and [here](https://github.com/WICG/WebApiDevice/).
+
+### ChromeOS Enterprise
+
+In enterprises using ChromeOS, the JSON configuration for the Managed Configuration API must be set in the "Managed Configuration" field under the app settings in the Google Admin Console. This allows administrators to centrally define and enforce web app configurations across managed ChromeOS devices. For detailed instructions, check the official ChromeOS documentation: [Web Managed Configuration](https://chromeos.dev/en/enterprise/web-managed-config).
