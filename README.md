@@ -46,7 +46,7 @@ Create a JSON policy configuration file with the following settings:
   - `managed_configuration_url`: The URL of the configuration file.
   - `managed_configuration_hash`: A version control hash. This example uses a SHA-1 hash generated with `sha1sum sample.json`, but any valid string is acceptable.
 
-Chromium stores the hash along with the fetched contents and will only request a new configuration file if the hash changes.
+Chromium stores the hash along with the fetched contents and will only request a new configuration file if the hash changes. [Reference on Source Code](https://github.com/chromium/chromium/blob/4b1b2ae75541695d0821e0754e95021f87a90ad8/chrome/browser/device_api/managed_configuration_api.cc#L263).
 
 #### 2. Apply the Policy
 Save the JSON configuration in the appropriate directory for your operating system (paths may vary):
